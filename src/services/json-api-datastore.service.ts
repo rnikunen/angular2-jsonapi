@@ -43,7 +43,7 @@ export class JsonApiDatastore {
         let options: RequestOptions = this.getOptions(headers);
         let url: string = this.buildUrl(modelType, params, id);
         return this.http.get(url, options)
-            .map((res: any) => this.extractRecordData(res, modelType))
+            .map((res: any) => this.extractRecordData(res, modelType, true))
             .catch((res: any) => this.handleError(res));
     }
 
